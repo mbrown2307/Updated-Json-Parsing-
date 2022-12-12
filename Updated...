@@ -1,0 +1,29 @@
+import com.google.gson.Gson;
+
+public class TestApiJsonParsingg {
+
+   public static void main(String[] args) {
+      
+      
+      // Create a String to hold your API response JSON
+      // No need to actually call the API here
+      //
+      // Newer versions of Java support multiline Strings
+      // This means we don't have to escape all the double quotes
+      // This is a common feature in other languages too
+      // Note how a multiline String starts and ends with 3 double quotes
+      // More info; https://blogs.oracle.com/javamagazine/post/text-blocks-come-to-java
+      //
+      String data = """
+                        "types": [{"slot": 1,"type": {"name": "normal", "url": "https://pokeapi.co/api/v2/type/1/"}}],"height": 3,"weight": 40,"type": {"name": "normal", "url": "https://pokeapi.co/api/v2/type/1/"}}
+                                          
+                    """;
+                    
+      // Show me this parses
+      // Be sure you submit all of your supporting classes as well   
+      // This is all I need!                 
+      Gson gson = new Gson();      
+      PokemonData pd = gson.fromJson(data, PokemonData.class);    
+   }
+
+}
